@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>TW Clientes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
 <body>
-<table>
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Data de Nascimento</th>
-            <th>Sexo</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for i in clientes %}
-        <tr>
-            <td>{{i.nome}}</td>
-            <td>{{i.data_nascimento}}</td>
-            <td>{{i.sexo}}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<main class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Data de Nascimento</th>
+                <th>Sexo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in clientes %}
+            <tr>
+                <td>{{i.nome}}</td>
+                <td>{{i.data_nascimento}}</td>
+                <td>{{i.sexo}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
+    <a href="{% url 'cadastrar_cliente' %}"><button class="btn btn-primary">Cadastrar</button></a>
+</main>
 </body>
 </html>
