@@ -17,7 +17,7 @@ Listagem de clientes
             {% for i in clientes %}
             <tr>
                 <td>{{i.nome}}</td>
-                <td>{{i.data_nascimento}}</td>
+                <td>{{i.data_nascimento | date:"d M Y"}}</td>
                 <td>{{i.sexo}}</td>
             </tr>
             {% endfor %}
