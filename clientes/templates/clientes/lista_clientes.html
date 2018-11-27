@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>TW Clientes</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-</head>
-<body>
-<main class="container">
+{% extends "clientes/base.html" %}
+
+{% block titulo %}
+Listagem de clientes
+{% endblock titulo %}
+
+{% block conteudo %}
     <table class="table">
         <thead>
             <tr>
@@ -27,6 +25,4 @@
     </table>
 
     <a href="{% url 'cadastrar_cliente' %}"><button class="btn btn-primary">Cadastrar</button></a>
-</main>
-</body>
-</html>
+{% endblock conteudo %}
