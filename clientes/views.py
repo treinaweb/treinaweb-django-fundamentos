@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Cliente
 from .forms import ClienteForm
@@ -17,3 +18,7 @@ def inserir_cliente(request):
     else:
         form = ClienteForm()
     return render(request, 'clientes/form_cliente.html', {'form': form})
+
+def listar_cliente_id(request, id):
+    cliente = Cliente.objects.get(id=id)
+    return HttpResponse(cliente)
