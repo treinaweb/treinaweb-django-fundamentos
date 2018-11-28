@@ -11,6 +11,7 @@ Listagem de clientes
                 <th>Nome</th>
                 <th>Data de Nascimento</th>
                 <th>Sexo</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,10 @@ Listagem de clientes
                 <td><a href="{% url 'listar_cliente_id' i.id %}">{{i.nome}}</a></td>
                 <td>{{i.data_nascimento | date:"d M Y"}}</td>
                 <td>{{i.sexo}}</td>
+                <td>
+                    <a href="{% url 'editar_cliente' i.id %}">Editar</a>
+                    <a href="#">Remover</a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>

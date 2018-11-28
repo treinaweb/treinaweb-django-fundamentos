@@ -26,5 +26,7 @@ def listar_cliente_id(request, id):
 def editar_cliente(request, id):
     cliente = Cliente.objects.get(id=id)
     form = ClienteForm(request.POST or None, instance=cliente)
-
+    if form.is_valid():
+        form.save()
+        return redirect('listar_clientes')
     return render(request, 'clientes/form_cliente.html', {'form': form})
