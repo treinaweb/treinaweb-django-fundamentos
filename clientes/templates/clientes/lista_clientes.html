@@ -16,7 +16,7 @@ Listagem de clientes
         <tbody>
             {% for i in clientes %}
             <tr>
-                <td>{{i.nome}}</td>
+                <td><a href="{% url 'listar_cliente_id' i.id %}">{{i.nome}}</a></td>
                 <td>{{i.data_nascimento | date:"d M Y"}}</td>
                 <td>{{i.sexo}}</td>
             </tr>

@@ -21,4 +21,4 @@ def inserir_cliente(request):
 
 def listar_cliente_id(request, id):
     cliente = Cliente.objects.get(id=id)
-    return HttpResponse(cliente)
+    return render(request, 'clientes/lista_cliente.html', {'cliente': cliente})
