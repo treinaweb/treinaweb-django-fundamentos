@@ -22,3 +22,9 @@ def inserir_cliente(request):
 def listar_cliente_id(request, id):
     cliente = Cliente.objects.get(id=id)
     return render(request, 'clientes/lista_cliente.html', {'cliente': cliente})
+
+def editar_cliente(request, id):
+    cliente = Cliente.objects.get(id=id)
+    form = ClienteForm(request.POST or None, instance=cliente)
+
+    return render(request, 'clientes/form_cliente.html', {'form': form})
