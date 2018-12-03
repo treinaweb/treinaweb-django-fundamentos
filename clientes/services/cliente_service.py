@@ -1,4 +1,5 @@
 from ..models import Cliente
+from django.db import connection
 
 def listar_clientes():
     clientes = Cliente.objects.all()
@@ -16,6 +17,10 @@ def cadastrar_cliente(cliente):
                            email=cliente.email, profissao=cliente.profissao)
 
 def editar_cliente(cliente, cliente_novo):
+    # SQL Injection
+    # with connection.cursor() as cursor:
+    #     nome = "'Carlos' , email = 'ana@mail.com'"
+    #     cursor.execute(f"UPDATE clientes_cliente SET nome={nome} WHERE id=2")
     cliente.nome = cliente_novo.nome
     cliente.sexo = cliente_novo.sexo
     cliente.data_nascimento = cliente_novo.data_nascimento
