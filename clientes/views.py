@@ -13,6 +13,8 @@ def listar_clientes(request):
     clientes = cliente_service.listar_clientes()
     return render(request, 'clientes/lista_clientes.html', {'clientes': clientes})
 
+# @csrf_exempt
+# Desativando a proteção CSRF
 def inserir_cliente(request):
     if request.method == "POST":
         form = ClienteForm(request.POST)
