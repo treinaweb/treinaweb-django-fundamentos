@@ -10,16 +10,16 @@ Listagem de clientes
             <tr>
                 <th>Nome</th>
                 <th>Data de Nascimento</th>
-                <th>Sexo</th>
+                <th>Profissao</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             {% for i in clientes %}
             <tr>
-                <td><a href="{% url 'listar_cliente_id' i.id %}">{{i.nome}}</a></td>
+                <td><a href="{% url 'listar_cliente_id' i.id %}">{{i.nome|safe}}</a></td>
                 <td>{{i.data_nascimento | date:"d M Y"}}</td>
-                <td>{{i.sexo}}</td>
+                <td>{{i.profissao|safe}}</td>
                 <td>
                     <a href="{% url 'editar_cliente' i.id %}">Editar</a>
                     <a href="{% url 'remover_cliente' i.id %}">Remover</a>
